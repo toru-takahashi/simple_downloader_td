@@ -20,7 +20,13 @@ Or install it yourself as:
 $ SimpleDownloaderTd <job_id>
 ```
 
+## Note
+
+Please install and use td command before use this command.
+This command use YOUR APIKEY in ~/.td/td.conf
+
 ## Contributing
+
 
 1. Fork it ( https://github.com/[my-github-username]/simple_downloader_td/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
