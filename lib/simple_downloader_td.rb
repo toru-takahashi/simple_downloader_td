@@ -43,8 +43,10 @@ module SimpleDownloaderTd
     # download job result as msgpack.gz
     begin
       File.open("#{job_id}_tmp.msgpack.gz", "wb") do |f|
+        downloaded = -1
         job.result_format('msgpack.gz', f) do |compr_size|
-          STDOUT.puts "Downloaded: #{(compr_size / job.result_size) * 100}%"
+          STDOUT.puts "Downloaded #{(compr_size / job.result_size) * 100}%" if downloaded != (compr_size / job.result_size)
+          downloaded = compr_size / job.result_size
         end
       end
     rescue Exception => e
